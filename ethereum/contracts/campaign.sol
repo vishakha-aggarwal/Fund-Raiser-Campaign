@@ -51,10 +51,11 @@ contract Campaign {
     }
 
     function contribute() public payable {
-        require(msg.sender != manager);
-        require(msg.value > minimumContribution);
+        
+        require(msg.value >= minimumContribution);
+        if(contributers[msg.sender] == false)
+            contributersCount++;
         contributers[msg.sender] = true;
-        contributersCount++;
     }
 
     function createRequest(string description, uint value, address recipient) public restricted {
@@ -70,7 +71,6 @@ contract Campaign {
 
     function approveRequest(uint index) public{
 
-        require(msg.sender != manager);
         require(contributers[msg.sender]);
         require(!requests[index].approvals[msg.sender]);
         requests[index].approvals[msg.sender] = true;
@@ -79,7 +79,7 @@ contract Campaign {
 
     function finalizeTransaction(uint index) public restricted {
 
-        require(requests[index].approvalCount > (contributersCount / 2));
+        require(requests[index].approvalCount >= (contributersCount / 2));
         require(!requests[index].complete);
 
         requests[index].recipient.transfer(requests[index].value);

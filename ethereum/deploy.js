@@ -22,4 +22,4 @@ const deploy = async() => {
 
 deploy();
 // Attempting to deploy from account 0xbE174795281F6516F9595e0B0D1558485a4802D5
-// Contract deployed to 0xcA3e07d9740423a654CEB03525964a66906Fb687
+// Contract deployed to 0x0051948F0796508C43f608C69e2fECe8b507Eba4

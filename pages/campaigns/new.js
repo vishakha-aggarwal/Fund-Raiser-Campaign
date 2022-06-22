@@ -4,7 +4,6 @@ import web3 from '../../ethereum/web3';
 import { Router } from '../../routes';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { Router } from '../../routes';
 
 function newCampaign() {
 

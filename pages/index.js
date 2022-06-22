@@ -4,6 +4,8 @@ import factory from '../ethereum/campaignFactory';
 import campaign from '../ethereum/campaign';
 // import CreateCampaign from '../components/CreateCampaign'
 import { Link } from '../routes';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function index() {
   
@@ -23,25 +25,34 @@ function index() {
   const getSumm = async(address) => {
 
       let result = await campaign(address).methods.getSummary().call();
-      
+      let obj = {
+        address: address,
+        result: result
+      }
       setSummary((oldSumm) => {
-        return [...oldSumm, result];
+        return [...oldSumm, obj];
       })
   }
 
   function createCards(address, index)
   {
-    let summ = summary[index];
-    
-    console.log(summ);
+    let summ = summary.find(ele => ele.address === address);
+    // let summ = summary[index];
+    // console.log(summ);
     if(summ !== undefined)  { 
-      return <AllCampaign address = {address} summary = {summ} index = {index}/>
+      // console.log(summ);
+      let add = summ.address;
+      let result = summ.result;
+      console.log(add);
+      console.log(result);
+      return <AllCampaign address = {add} summary = {result} index = {index}/>
         
     }
   }
   
   return (
     <div>
+      <Header />
       <Link route="/campaigns/new">
         <a><button>Create</button></a>
       </Link>
@@ -50,6 +61,7 @@ function index() {
           return <div key = {address}>{createCards(address, index)}</div>
           // return <div key={address}>{address}</div>
        })}
+       <Footer />
     </div>
   )
 }

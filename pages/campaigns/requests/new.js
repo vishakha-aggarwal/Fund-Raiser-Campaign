@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Campaign from '../../../ethereum/campaign';
 import web3 from '../../../ethereum/web3';
 import { Link, Router } from '../../../routes';
+import Footer from '../../../components/Footer';
+import Header from '../../../components/Header';
 
 function NewRequest() {
 
@@ -42,15 +44,28 @@ function NewRequest() {
 
   return (
     <div>
-      <div>Create a new reqeust</div>
-      <form onSubmit={submitForm}>
-        Value(ether): <input name = "value" onChange={e => setValue(e.target.value)} /><br />
-        Description: <input name = "description" onChange={e => setDescription(e.target.value)} /><br />
-        Receipent: <input name = "receipent" onChange={e => setReceipent(e.target.value)} /><br />
+      <Header />
+      <div style = {
+        {fontStyle : "italic", 
+        textAlign: "center", 
+        fontSize : "18px",
+        border: "1px solid grey",
+        padding: "10px",
+        width: "40%",
+        backgroundColor : "rgb(155, 236, 155)",
+        margin: "5px",
+        marginLeft: "25vw"
+      }}>Create a new reqeust</div>
+
+      <form onSubmit={submitForm} className = "reqForm">
+        Value(ether):<br /> <input name = "value" onChange={e => setValue(e.target.value)} placeholder="Enter the amount to be transferred"/><br />
+        Description:<br />  <textarea name = "description" width = "400px" height= "100px" placeholder='Short description of the request' onChange={e => setDescription(e.target.value)} /><br />
+        Receipent:<br />  <input name = "receipent" onChange={e => setReceipent(e.target.value)} placeholder="Account number of the receiver" /><br />
         <button type = "submit" id='createReq'>Create</button>
+        {loading? <div>Loading Please Wait</div> : <span></span> }
+        {error !== "" ? <div className='errhandle'>OOPS!!! <br/> {error}</div>: <span></span>}
       </form>
-      {loading? <div>Loading Please Wait</div> : <span></span> }
-      {error !== "" ? <div>OOPS!!! <br/> {error}</div>: <span></span>}
+      <Footer />
     </div>
   )
 }

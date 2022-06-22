@@ -4,6 +4,10 @@ import { useLocation } from 'react-router-dom';
 import campaign from "../../ethereum/campaign";
 import factory from "../../ethereum/campaignFactory";
 import ShowCampaign from '../../components/ShowCampaign'
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import { Router } from '../../routes';
+
 
 function show() {
 
@@ -43,12 +47,13 @@ function show() {
 
   return (
     <div>
-      <hr />
+      <Header />
       {summary.map((summ, index) => {
         
           return <div key = {address}>{createCard(summ, index)}</div>
           // return <div key={address}>{address}</div>
        })}
+       <Footer />
     </div>
   )
 }

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Campaign from '../../../ethereum/campaign'
 import ShowRequest from '../../../components/ShowRequest';
 import { Link } from '../../../routes';
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
+import { Router } from '../../../routes';
 
 function index() {
 
@@ -39,17 +42,19 @@ function index() {
 
     return (
     <div>
-        {address !== undefined? 
-        <Link route={`/campaigns/${address}/requests/new`}>
-            <a><button>Create new request</button></a>
-        </Link> : <span></span>}
-        <div>These are all the requests</div>
-        {requests.map((req, index) => {
-            // console.log(req);
-            return <div><ShowRequest key = {index} details = {req} index = {index} address = {address}/></div>
-        })}
-        <div>Total Requests: {requestCount}</div>
-        <hr />
+        <Header />    
+        <div className='container'>
+            {address !== undefined? 
+            <Link route={`/campaigns/${address}/requests/new`}>
+                <a><button className="createReq">Create new request</button></a>
+            </Link> : <span></span>}
+            <div>Total Generated Requests: {requestCount}</div>
+            {requests.map((req, index) => {
+                // console.log(req);
+                return <div><ShowRequest key = {index} details = {req} index = {index} address = {address}/></div>
+            })}
+        </div>
+        <Footer />
     </div>
   )
 }

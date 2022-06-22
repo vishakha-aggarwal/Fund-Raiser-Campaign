@@ -32,7 +32,7 @@ function ShowRequest(props) {
         } catch (err) {
             setError(err.message);
         }
-        document.getElementById("approve").innerHTML = "Approve";
+        document.getElementById("approve").innerHTML = "Approve Request";
         setLoading(false);
     }
 
@@ -54,27 +54,24 @@ function ShowRequest(props) {
         } catch (err) {
             setError(err.message);
         }
-        document.getElementById("finalize").innerHTML = "Finalize request";
+        document.getElementById("finalize").innerHTML = "Finalize Request";
         setLoading(false);
     }
 
     return (
-        <div>
-            <hr />
-            <div> {index}. Description : {details[0]} </div>
-            <div>Value: {web3.utils.fromWei(details[1], 'ether')} ether</div>
-            <div>to Account: {details[2]}</div>
-            <div>ApprovalCount: {details[4]}</div>
+        <div className='box'>
+            <div> {index}. Request Description : {details[0]} </div>
+            <div>Value to be transferred: {web3.utils.fromWei(details[1], 'ether')} ether</div>
+            <div>To Account: {details[2]}</div>
+            <div>Number of Approvals: {details[4]}</div>
             <div>Completed status: {details[3] ? <span>True</span> : <span>False</span>}</div>
             {details[3] !== true ? (
             <div>
-                <button onClick={approveReq} id = "approve">Approve</button>
-                <button onClick={finalReq} id = "finalize">Finalize request</button>
+                <button onClick={approveReq} id = "approve">Approve Request</button>
+                <button onClick={finalReq} id = "finalize">Finalize Request</button>
             </div>) : <span></span>}
             {loading? <div>Loading Please Wait</div> : <span></span> }
-            {error !== "" ? <div>OOPS!!! <br/> {error}</div>: <span></span>}
-
-            <hr />
+            {error !== "" ? <div className='errhandle'>OOPS!!! <br/> {error}</div>: <span></span>}
         </div>
     )
 }

@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import campaignFactory from '../../ethereum/campaignFactory';
 import web3 from '../../ethereum/web3';
 import { Router } from '../../routes';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import { Router } from '../../routes';
 
 function newCampaign() {
 
@@ -38,16 +41,32 @@ function newCampaign() {
 
   return (
     <div>
-      <div>Create a new campaign</div>
-      <form onSubmit={submitForm}>
-        Campaign Name: <input name = "campaignName" onChange={e => setCampaignName(e.target.value)} /><br />
-        Description: <input name = "description" onChange={e => setDescription(e.target.value)} /><br />
-        Minimum Amount to contribute(ether): <input name = "minimumContribution" onChange={e => setMinimumContribution(e.target.value)} /><br />
-        Amount Required: <input name = "amountReq" onChange={e => setAmountReq(e.target.value)} /><br />
-        <button type = "submit" id='createCampaign'>Create</button>
-      </form>
-      {loading? <div>Loading Please Wait</div> : <span></span> }
-      {error !== "" ? <div>OOPS!!! <br/> {error}</div>: <span></span>}
+      <Header />
+      <div style = {
+        {fontStyle : "italic", 
+        textAlign: "center", 
+        fontSize : "18px",
+        border: "1px solid grey",
+        padding: "10px",
+        width: "40%",
+        backgroundColor : "rgb(155, 236, 155)",
+        margin: "5px",
+        marginLeft: "25vw"
+      }}> Create a new campaign </div>
+      <div className='newCampForm'>
+        <form onSubmit={submitForm}>
+          Campaign Name: <br/> <input name = "campaignName" onChange={e => setCampaignName(e.target.value)} placeholder = "Enter Campaign Name"/><br />
+          Description: <br/> <textarea name = "description" width = "400px" height= "100px" onChange={e => setDescription(e.target.value)} placeholder = "Describe your campaign here"/><br />
+          Minimum Amount to contribute(ether):<br/> <input name = "minimumContribution" onChange={e => setMinimumContribution(e.target.value)} placeholder = "Enter Minimum Contribution Amount"/><br />
+          Amount Required:<br /> <input name = "amountReq" onChange={e => setAmountReq(e.target.value)} placeholder = "Enter the amount require"/><br />
+          <button type = "submit" id='createCampaign'>Create</button>
+        </form>
+        <span>
+          {loading? <span>Loading Please Wait</span> : <span></span> }
+          {error !== "" ? <span className = "errhandle">OOPS!!! <br/> {error}</span>: <span></span>}
+        </span>
+      </div>
+      <Footer />
     </div>
   )
 }

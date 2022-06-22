@@ -6,6 +6,8 @@ import campaign from '../ethereum/campaign';
 import { Link } from '../routes';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Router } from '../routes';
+
 
 function index() {
   
@@ -53,14 +55,16 @@ function index() {
   return (
     <div>
       <Header />
+      <div className='container'>
       <Link route="/campaigns/new">
-        <a><button>Create</button></a>
+        <a><button className='createCampaign'>Create</button></a>
       </Link>
       <h3> Open Campaigns </h3>
       {list.map((address, index) => {
           return <div key = {address}>{createCards(address, index)}</div>
           // return <div key={address}>{address}</div>
        })}
+       </div>
        <Footer />
     </div>
   )

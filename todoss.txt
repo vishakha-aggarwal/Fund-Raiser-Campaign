@@ -1,6 +1,2 @@
-manager can also transfer
-less than equal
-deploy
-final test again
-css
-home
+Site is liveeee :)
+https://fund-raiser-campaign.netlify.app/

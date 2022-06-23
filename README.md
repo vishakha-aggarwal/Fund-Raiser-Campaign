@@ -35,6 +35,8 @@
  - This is a very much secure system. No external database is require and with even secure functionality than other database. 
  - Any kind of unfair practice will cancel the transaction.
 
+## ✨Link to the application - https://fund-raiser-campaign.netlify.app/
+
 ## 🟠 Tech stacks used - 
 ####
 - Ethereum Smart contract

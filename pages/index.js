@@ -45,8 +45,8 @@ function index() {
       // console.log(summ);
       let add = summ.address;
       let result = summ.result;
-      console.log(add);
-      console.log(result);
+      // console.log(add);
+      // console.log(result);
       return <AllCampaign address = {add} summary = {result} index = {index}/>
         
     }

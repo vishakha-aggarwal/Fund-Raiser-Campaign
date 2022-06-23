@@ -38,8 +38,8 @@ function show() {
     let currentURL = window.location.pathname;
     // console.log(currentURL);
     address = currentURL.substring(11);
-    console.log("showing summary");
-    console.log(summ);
+    // console.log("showing summary");
+    // console.log(summ);
     if(summ !== undefined)  { 
       return <ShowCampaign address = {address} summary = {summ} index = {index}/>
         

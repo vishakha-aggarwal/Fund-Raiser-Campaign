@@ -18,7 +18,7 @@ function index() {
 
         let currentURL = window.location.pathname;
         let add = currentURL.substring(11, 53);
-        console.log(add);
+        // console.log(add);
         setAddress(add);
         campaign = Campaign(add);
         getDetails();

@@ -27,7 +27,7 @@ function ShowRequest(props) {
                 from: accounts[0]
             });
             // Router.replaceRoute(`/campaigns/${props.address}/requests`);
-            console.log(`/campaigns/${props.address}/requests`);
+            // console.log(`/campaigns/${props.address}/requests`);
             
         } catch (err) {
             setError(err.message);
@@ -50,7 +50,7 @@ function ShowRequest(props) {
             from: accounts[0]
         });
 
-        console.log(`/campaigns/${props.address}/requests`);
+        // console.log(`/campaigns/${props.address}/requests`);
         } catch (err) {
             setError(err.message);
         }

@@ -17,9 +17,9 @@ function NewRequest() {
 
     event.preventDefault();
     let currentURL = window.location.pathname;
-    console.log(currentURL);
+    // console.log(currentURL);
     let address = currentURL.substring(11, 53);
-    console.log(address);
+    // console.log(address);
     
     const campaign = Campaign(address);
     setError('');

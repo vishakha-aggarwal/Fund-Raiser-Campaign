@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@metamask/detect-provider": "^2.0.0",
     "@truffle/hdwallet-provider": "^1.5.1",
     "ganache-cli": "^6.12.2",
     "mocha": "^10.0.0",

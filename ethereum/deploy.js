@@ -4,8 +4,7 @@ const campaignFactory = require('./contractJSON/CampaignFactory.json');
 
 const provider = new HDWalletProvider({
     mnemonic: 'barely cool party wet sweet grocery warm fresh sibling lab kiss reopen',
-    providerOrUrl: 'https://rinkeby.infura.io/v3/4d539ad5da44453595cc1d281731878d'
-});
+    providerOrUrl: 'https://goerli.infura.io/v3/4d539ad5da44453595cc1d281731878d'});
 
 const web3 = new Web3(provider); 
 
@@ -22,4 +21,4 @@ const deploy = async() => {
 
 deploy();
 // Attempting to deploy from account 0xbE174795281F6516F9595e0B0D1558485a4802D5
-// Contract deployed to 0x0051948F0796508C43f608C69e2fECe8b507Eba4
+// Contract deployed to 0xa6b2F04bDdA059A1386D8Eab8e2e04f1d4cBB1ee

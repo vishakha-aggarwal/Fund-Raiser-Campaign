@@ -4,7 +4,7 @@ import CampaginFactory from './contractJSON/CampaignFactory.json';
 //searching for contract at particular address
 const instance = new web3.eth.Contract(
   JSON.parse(CampaginFactory.interface),
-  '0x0051948F0796508C43f608C69e2fECe8b507Eba4'
+  '0xa6b2F04bDdA059A1386D8Eab8e2e04f1d4cBB1ee'
 );
 
 export default instance;

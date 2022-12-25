@@ -25,9 +25,9 @@ function newCampaign() {
 
     try{
       const accounts = await web3.eth.getAccounts();
+      // console.log(web3);
       let minamount = web3.utils.toWei(minimumContribution, 'ether');
-      await campaignFactory.methods.createCampaign(minamount, campaignName, description, amountReq)
-        .send({
+      await campaignFactory.methods.createCampaign(minamount, campaignName, description, amountReq).send({
           from: accounts[0]
         });
       Router.pushRoute('/');

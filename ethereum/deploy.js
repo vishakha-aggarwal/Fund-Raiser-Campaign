@@ -2,12 +2,9 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require('web3');
 const campaignFactory = require('./contractJSON/CampaignFactory.json');
 
-if(process.env.NODE_ENV!=="production")
-  require("dotenv").config({path:"./config.env"});
-
 const provider = new HDWalletProvider({
-    mnemonic: process.env.mnemonic,
-    providerOrUrl: process.env.infuraApiKey});
+    mnemonic: process.env.NEXT_PUBLIC_MNEMONIC,
+    providerOrUrl: process.env.NEXT_PUBLIC_INFURA_API_KEY});
 
 const web3 = new Web3(provider); 
 

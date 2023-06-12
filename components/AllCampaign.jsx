@@ -8,17 +8,17 @@ function AllCampaign(props) {
   return (
     <div className='box'>
         {/* <div>Deployed address{props.address}</div> */}
-        <div>Campaign Name - {props.summary[5]}</div>
-        <div>Campaign Description - {props.summary[6]}</div>
-        <div>Manager Address - {props.summary[4]}</div>
-        <div>Minimum contribution(ether) - {web3.utils.fromWei(props.summary[0], 'ether')}</div>
-        {/* <div>Number of Requests {props.summary[2]}</div>
-        <div>Number of Contributers {props.summary[3]}</div>
-        <div>Curr Balance:(ether):  {web3.utils.fromWei(props.summary[1], 'ether')}</div> */}
-        <div>Amount Require - {props.summary[7]}</div>
-        <div className='viewCampaign'>
-        <Link route={`/campaigns/${props.address}`}><a>View Campaign</a></Link>
-        </div>
+        <div><span className='campaignTitle'>Campaign Name - </span>{props.summary[5]}</div>
+        <div><span className='campaignTitle'>Campaign Description - </span>{props.summary[6]}</div>
+        {/* <div><span className='campaignTitle'>Manager Address - </span>{props.summary[4]}</div> */}
+        <div><span className='campaignTitle'>Number of Requests - </span>{props.summary[2]}</div>
+        <div><span className='campaignTitle'>Number of Contributers - </span>{props.summary[3]}</div>
+        <div><span className='campaignTitle'>Current Balance - </span>{web3.utils.fromWei(props.summary[1], 'ether')} ethers</div> 
+        <Link route={`/campaigns/${props.address}`}>
+          <button className='viewCampaign'>
+            View Campaign
+          </button>
+        </Link>
     </div>
   )
 }

@@ -43,12 +43,13 @@ function index() {
     return (
     <div>
         <Header />    
-        <div className='container'>
+        <div className='showCampaignHeading'>All Requests</div>
+        <div className='allRequestContainer'>
             {address !== undefined? 
             <Link route={`/campaigns/${address}/requests/new`}>
                 <a><button className="createReq">Create new request</button></a>
-            </Link> : <span></span>}
-            <div>Total Generated Requests: {requestCount}</div>
+            </Link> : <></>}
+            <div className='campaignTitle'>Total Generated Requests: {requestCount}</div>
             {requests.map((req, index) => {
                 // console.log(req);
                 return <div><ShowRequest key = {index} details = {req} index = {index} address = {address}/></div>

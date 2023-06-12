@@ -1,44 +1,161 @@
+html{
+    margin: 0px;
+    padding: 0px;
+    background-color: #000000f1;
+}
+
+body{
+    margin: 0px;
+}
+
+html::-webkit-scrollbar {
+    width: 5px;
+    background-color: #000000;
+}
+  
+html::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #fffffff1;
+    border-radius: 1rem;
+}
+
 .home{
-    border: 1px solid grey;
-    padding: 10px;
-    position: absolute;
-    /* margin: 40px; */
-    top: 40px;
-    left: 40px;
-    width: 200px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: rgb(255, 217, 174);
-    font-size: 15px;
+    display: none;
 }
 
-.header{
-    border: 1px solid gray;
-    background-color: rgb(223, 203, 243);
-    border-radius: 5px;
+.logo {
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.headerCont{
+    background-color: rgb(0, 0, 0);
     padding: 10px;
-    font-family: cursive;
-    width: 40vw;
+    color: rgb(255, 255, 255);
+    top: 0;
+    font-family: 'initial';
     text-align: center;
-    margin-left: 25vw;
+    padding: 1vmax;
     font-size: 30px;
-}
-
-h6{
+    height: 40px;
+    display: flex;
+    position: sticky;
+    width: -webkit-fill-available;
+    z-index: 100;
+    box-shadow: 0px 0px 10px rgb(163, 163, 163);
     font-style: italic;
-    margin: 5px;
-    color: rgb(10, 59, 150);
 }
 
-.footer{
-    border: 1px solid gray;
-    background-color: rgb(217, 185, 248);
-    border-radius: 5px;
-    padding: 10px;
-    font-family: cursive;
-    width: 40vw;
+.context{
+    margin-left: 20px;
+}
+
+.logoImg{
+    margin-top: 0;
+    /* width: 100%; */
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgb(163, 163, 163);
+}
+
+.navBar{
+    display: flex;
+    font-size: 18px;
+    position: absolute;
+    right: 8vw;
+}
+
+.navBar > div {
+    text-decoration: none;
+    margin: 0 1vw;
+}
+
+.headerBtn{
+    font-family: sans-serif;
+    padding: 10px 1vw;
+    background-color: rgb(57, 57, 57);
+    color: aliceblue;
+    border-radius: 10px;
+    transition: all 0.5s;
+    border: 1px solid rgb(209, 209, 209);
+}
+
+.headerBtn:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    /* border: 1px solid rgb(209, 209, 209); */
+}
+
+.bannerCont{
+    background-image: url('./bgimg.png');
+    height: 90vh;
+    width: -webkit-fill-available;
+    /* background-color: rgb(43 45 69); */
+    background-blend-mode: multiply;
+}
+
+.bannerContent{
+    color: #a39f9f;
+    font-size: 4vw;
+    font-family: sans-serif;
+    height: fit-content;
+    margin: auto;
+    width: fit-content;
+    padding-top: 30vh;
+    font-style: italic;
+    /* filter: unset blur; */
     text-align: center;
-    margin-left: 25vw;
+}
+
+.bannerContent:hover{
+    color: rgb(236, 234, 234);
+    /* filter: unset blur; */
+    transition: all 0.5s ease-in;
+    text-shadow: 1px 1px 1px rgb(170, 200, 255);
+    font-size: 4.1vw;
+
+}
+
+.bannerContext{
+    padding: 1vw;
+    text-shadow: 1px 1px 1px white;
+}
+
+.homeHeading{
+    text-align: center;
+    font-size: 3vw;
+    border-bottom: 1px solid rgb(243, 243, 243);
+    width: 20vmax;
+    padding: 1vmax;
+    margin: 6vh auto;
+    color: rgb(255, 255, 255);
+    font-family: fantasy;
+    letter-spacing: 2px;
+}
+
+.icons{
+    display: none;
+}
+
+footer {
+    padding: 20px;
+    background-color: rgb(32, 31, 31);
+    color: white;
+    bottom: 0;
+    position: relative;
+    width: -webkit-fill-available;
+    z-index: 100;
+    box-shadow: -1px -2px 10px gray
+}
+
+.copyright{
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.allCampaign{
+    min-height: 90vh;
 }
 
 .container{
@@ -51,6 +168,7 @@ h6{
     margin-left: 5vw;
     width: 85vw;
     box-shadow: rgb(221, 221, 221) 10px 5px 15px 5px;
+    min-height: 90vh;
 }
 
 .createCampaign{
@@ -65,54 +183,113 @@ h6{
 }
 
 .box{
+    margin: 6vh auto;
     border: 1px solid grey;
-    background-color: rgb(232, 235, 251);
-    margin: 10px;
+    background-color: rgb(241 241 241 / 20%);
+    /* margin-bottom: 10px; */
     padding: 10px;
     width: 80%;
+    color: rgb(170, 200, 255);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px grey;
+    font-family: system-ui;
+    overflow-wrap: break-word;
+}
+
+.box>div{
+    padding: 5px 0;
+}
+
+.campaignTitle{
+    font-weight: bold;
+    color: rgb(196 203 215);
+    border-bottom: 1px solid rgb(87, 87, 87);
+}
+
+.box>a{
+    text-decoration: none;
 }
 
 .viewCampaign{
-    font-style: italic;
-    font-size: 18px;
+    font-family: sans-serif;
+    padding: 10px 1vw;
+    background-color: aliceblue;
+    border-radius: 10px;
+    transition: all 0.5s;
+    border: 1px solid rgb(209, 209, 209);
+    margin: 10px auto;
+    width: 200px;
+    /* letter-spacing: 2px; */
+    font-weight: bold;
+    font-size: 1.3vw;
+}
+
+.viewCampaign:hover{
+    box-shadow: 0 0 6px rgb(199, 198, 198);
+    background-color: rgb(227, 230, 230);
+    border: 1px solid rgb(56, 55, 55);
 }
 
 .newCampForm{
-    border: 1px solid gray;
-    background-color: rgb(252, 252, 252);
-    border-radius: 5px;
     padding: 10px;
     font-family: cursive;
     font-size: 18px;
     margin: 10px;
-    margin-left: 15vw;
-    width: 60vw;
+    /* margin-left: 15vw; */
+    /* width: 60vw; */
     /* height: 60vh; */
     padding-left: 10%;
-    box-shadow: rgb(221, 221, 221) 10px 5px 15px 5px;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    min-height: 70vh;
 }
 
 input{
     padding: 8px;
     width: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(216, 216, 216);
 }
 
 textarea {
     height: 80px;
+    margin-bottom: 20px;
     width: 90%;
     resize: none;
-    font-style: normal;
+    background-color: rgb(216, 216, 216);
+    font-family: sans-serif;
 }
 
+
+.showRequests{
+    font-family: sans-serif;
+    padding: 13px 2vw;
+    background-color: aliceblue;
+    border-radius: 10px;
+    transition: all 0.5s;
+    border: 1px solid rgb(209, 209, 209);
+    margin: 4vh 0 2vh 0;
+    width: 300px;
+    /* letter-spacing: 2px; */
+    font-weight: bold;
+    font-size: 1.3vw;
+}
+
+.showRequests:hover{
+    box-shadow: 0 0 6px rgb(199, 198, 198);
+    background-color: rgb(227, 230, 230);
+    border: 1px solid rgb(56, 55, 55);
+}
+
+
 button#createCampaign{
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px 20px;
     background-color: rgb(139, 163, 229);
     border: 1px solid grey;
     border-radius: 10px;
     font-size: 15px;
+    width: 150px;
+    font-weight: bold;
 }
 
 .errhandle{
@@ -125,18 +302,58 @@ button#createCampaign{
     padding: 5px;
 }
 
+.showCampaignHeading{
+    text-align: center;
+    font-size: 3vw;
+    border-bottom: 1px solid rgb(243, 243, 243);
+    width: 50vw;
+    padding: 1vmax;
+    margin: 6vh auto;
+    color: rgb(255, 255, 255);
+    font-family: fantasy;
+    letter-spacing: 2px;   
+}
+
 .showCampaignContainer{
-    border: 1px solid gray;
-    background-color: rgb(239, 253, 255);
-    border-radius: 5px;
+    /* border: 1px solid gray; */
+    /* background-color: rgb(239, 253, 255); */
+    /* border-radius: 5px; */
     padding: 10px;
-    font-family: cursive;
     margin: 20px;
     margin-left: 5vw;
     width: 85vw;
-    color: rgb(30, 30, 144);
+    color: rgb(212, 212, 212);
     font-size: 18px;
-    box-shadow: rgb(221, 221, 221) 10px 5px 15px 5px;
+    min-height: 90vh;
+    font-family: sans-serif;
+    overflow-wrap: break-word;
+    /* box-shadow: rgb(221, 221, 221) 0px 0px 5px; */
+}
+
+.showCampaignContainer>div{
+    padding: 1.5vh 0;
+}
+
+.showCamp{
+    font-family: cursive;
+    font-weight: bold;
+    color: rgb(196 203 215);
+    border-bottom: 1px solid rgb(87, 87, 87);
+    padding-right: 1vw;
+
+}
+
+.requestbox{
+    margin: 6vh auto;
+    border: 1px solid grey;
+    background-color: rgb(241 241 241 / 20%);
+    /* margin-bottom: 10px; */
+    padding: 10px;
+    /* width: 80%; */
+    color: rgb(170, 200, 255);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px grey;
+    font-family: system-ui;
 }
 
 button#donate{
@@ -145,42 +362,83 @@ button#donate{
     background-color: rgb(143, 236, 182);
     width: 150px;
     height: 50px;
-    font-family: cursive;
+    font-family: sans-serif;
     font-size: 16px;
+    font-weight: bold;
     border: 1px solid grey;
     border-radius: 10px;
 }
 
+button#donate:hover{
+    box-shadow: 0 0 10px rgb(109, 109, 109);
+}
+
+.allRequestContainer{
+    /* border: 1px solid gray; */
+    /* background-color: rgb(239, 253, 255); */
+    /* border-radius: 5px; */
+    padding: 10px;
+    margin: 20px;
+    margin-left: 5vw;
+    width: 85vw;
+    color: rgb(212, 212, 212);
+    font-size: 18px;
+    font-family: sans-serif;
+    min-height: 90vh;
+    /* box-shadow: rgb(221, 221, 221) 0px 0px 5px; */
+}
+
 button#approve{
-    border: 1px solid gray;
-    border-radius: 10px;
     height: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 5px;
-    font-size: 15px;
-    background-color: rgb(239, 234, 138);
+    background-color: rgb(200, 200, 200);
+    margin: 2px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-right: 1vw;
+    transition: all 0.5s ease-in;
+}
+
+button#approve:hover{
+    box-shadow: 0 0 5px rgb(109, 109, 109);
+    background-color: rgb(251, 231, 204);
 }
 
 button#finalize{
-    border: 1px solid gray;
-    border-radius: 10px;
     height: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 5px;
-    font-size: 15px;
-    background-color: rgb(150, 239, 138);
+    margin: 2px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid grey;
+    border-radius: 10px;
+    transition: all 0.5s ease-in;
+    background-color: rgb(182, 255, 172);
+}
+
+button#finalize:hover{
+    box-shadow: 0 0 5px rgb(109, 109, 109);
+    background-color: rgb(164, 253, 153);
 }
 
 .createReq{
     border: 1px solid grey;
     border-radius: 10px;
+    position: relative; 
     float: right;
-    height: 40px;
-    background-color: rgb(128, 185, 223);
-    font-family: cursive;
+    background-color: rgb(181, 224, 253);
+    font-family: sans-serif;
     font-size: 16px;
+    padding: 14px;
+}
+
+.createReq:hover{
+    box-shadow: 0 0 10px rgb(175, 255, 172);
+    background-color: rgb(140, 208, 235);
 }
 
 .reqForm{
@@ -206,4 +464,104 @@ button#createReq{
     border: 1px solid grey;
     border-radius: 10px;
     font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .homeHeading{
+        font-size: 16px;
+    }
+
+    .bannerContent{
+        font-size: 6vw;
+    }
+    .bannerContext{
+        padding: 3vw 1vw;
+    }
+
+    .viewCampaign{
+        font-size: 10px;
+        width: 100px;
+    }
+
+    .box{
+        font-size: smaller;
+    }
+
+    .showCampaignHeading{
+        font-size: 20px;
+    }
+
+    .showCampaignContainer{
+        font-size: smaller;
+    }
+
+    .showRequests{
+        font-size: 12px;
+        width: 150px;
+    }
+
+    input{
+        width: 80%;
+    }
+
+    button#donate{
+        font-size: 12px;
+    }
+
+    .copyright{
+        font-size: 12px;
+    }
+
+    .campaignTitle{
+        font-size: 12px;
+    }
+
+    .createReq{
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    button#approve, button#finalize{
+        font-size: 12px;
+        height: 40px;
+    }
+
+    .newCampForm{
+        padding: 10px;
+        font-size: smaller;
+    }
+
+    .newCampForm > form > input, .newCampForm > form > textarea{
+        width: 90%;
+    }
+
+    .navBar{
+        right: 0vw;
+    }
+
+    .icons{
+        display: block;
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .headerBtn{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .context{
+        margin-left: 10px;
+        font-size: 25px;
+        margin-top: 5px;
+    }
+
+    .icons{
+        padding-right: 0px;
+        font-size: 20px;
+    }
+
 }

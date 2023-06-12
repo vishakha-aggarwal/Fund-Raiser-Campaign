@@ -45,23 +45,13 @@ function NewRequest() {
   return (
     <div>
       <Header />
-      <div style = {
-        {fontStyle : "italic", 
-        textAlign: "center", 
-        fontSize : "18px",
-        border: "1px solid grey",
-        padding: "10px",
-        width: "40%",
-        backgroundColor : "rgb(155, 236, 155)",
-        margin: "5px",
-        marginLeft: "25vw"
-      }}>Create a new reqeust</div>
+      <div className='showCampaignHeading'>Create Reqeust</div>
 
-      <form onSubmit={submitForm} className = "reqForm">
+      <form onSubmit={submitForm} className = "newCampForm">
         Value(ether):<br /> <input name = "value" onChange={e => setValue(e.target.value)} placeholder="Enter the amount to be transferred"/><br />
         Description:<br />  <textarea name = "description" width = "400px" height= "100px" placeholder='Short description of the request' onChange={e => setDescription(e.target.value)} /><br />
         Receipent:<br />  <input name = "receipent" onChange={e => setReceipent(e.target.value)} placeholder="Account number of the receiver" /><br />
-        <button type = "submit" id='createReq'>Create</button>
+        <button type = "submit" id='createCampaign'>Create</button>
         {loading? <div>Loading Please Wait</div> : <span></span> }
         {error !== "" ? <div className='errhandle'>OOPS!!! <br/> {error}</div>: <span></span>}
       </form>

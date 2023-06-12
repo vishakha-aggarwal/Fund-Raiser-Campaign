@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import AllCampaign from '../components/AllCampaign';
 import factory from '../ethereum/campaignFactory';
 import campaign from '../ethereum/campaign';
-// import CreateCampaign from '../components/CreateCampaign'
 import { Link } from '../routes';
 import Header from '../components/Header';
+import Banner from '../components/Banner';
 import Footer from '../components/Footer';
 import { Router } from '../routes';
 
@@ -53,20 +53,17 @@ function index() {
   }
   
   return (
-    <div>
+    <>
       <Header />
-      <div className='container'>
-      <Link route="/campaigns/new">
-        <a><button className='createCampaign'>Create</button></a>
-      </Link>
-      <h3> Open Campaigns </h3>
-      {list.map((address, index) => {
-          return <div key = {address}>{createCards(address, index)}</div>
-          // return <div key={address}>{address}</div>
-       })}
-       </div>
-       <Footer />
-    </div>
+      <Banner />
+      <div className='allCampaign'>
+        <div className='homeHeading'>All Campaigns</div>
+        {list && list.map((address, index) => {
+            return <div key = {address}>{createCards(address, index)}</div>
+        })}
+      </div>
+      <Footer />
+    </>
   )
 }
 

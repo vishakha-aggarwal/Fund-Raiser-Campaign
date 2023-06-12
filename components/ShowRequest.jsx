@@ -59,12 +59,13 @@ function ShowRequest(props) {
     }
 
     return (
-        <div className='box'>
-            <div> {index}. Request Description : {details[0]} </div>
-            <div>Value to be transferred: {web3.utils.fromWei(details[1], 'ether')} ether</div>
-            <div>To Account: {details[2]}</div>
-            <div>Number of Approvals: {details[4]}</div>
-            <div>Completed status: {details[3] ? <span>True</span> : <span>False</span>}</div>
+        <div className='box' style={{width: "100%"}}>
+            <div><span className='campaignTitle'> Request {index}: </span></div>
+            <div><span className='campaignTitle'> Description - </span>{details[0]} </div>
+            <div><span className='campaignTitle'> Value to be transferred - </span>{web3.utils.fromWei(details[1], 'ether')} ether</div>
+            <div><span className='campaignTitle'> To Account - </span>{details[2]}</div>
+            <div><span className='campaignTitle'> Number of Approvals - </span>{details[4]}</div>
+            <div><span className='campaignTitle'> Completed status - </span>{details[3] ? <span>True</span> : <span>False</span>}</div>
             {details[3] !== true ? (
             <div>
                 <button onClick={approveReq} id = "approve">Approve Request</button>

@@ -41,17 +41,7 @@ function newCampaign() {
   return (
     <div>
       <Header />
-      <div style = {
-        {fontStyle : "italic", 
-        textAlign: "center", 
-        fontSize : "18px",
-        border: "1px solid grey",
-        padding: "10px",
-        width: "40%",
-        backgroundColor : "rgb(155, 236, 155)",
-        margin: "5px",
-        marginLeft: "25vw"
-      }}> Create a new campaign </div>
+      <div className='showCampaignHeading'>Create Campaign</div>
       <div className='newCampForm'>
         <form onSubmit={submitForm}>
           Campaign Name: <br/> <input name = "campaignName" onChange={e => setCampaignName(e.target.value)} placeholder = "Enter Campaign Name"/><br />

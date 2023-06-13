@@ -51,7 +51,7 @@ function NewRequest() {
         Value(ether):<br /> <input name = "value" onChange={e => setValue(e.target.value)} placeholder="Enter the amount to be transferred"/><br />
         Description:<br />  <textarea name = "description" width = "400px" height= "100px" placeholder='Short description of the request' onChange={e => setDescription(e.target.value)} /><br />
         Receipent:<br />  <input name = "receipent" onChange={e => setReceipent(e.target.value)} placeholder="Account number of the receiver" /><br />
-        <button type = "submit" id='createCampaign'>Create</button>
+        <button type = "submit" id='createReq'>Create</button>
         {loading? <div>Loading Please Wait</div> : <span></span> }
         {error !== "" ? <div className='errhandle'>OOPS!!! <br/> {error}</div>: <span></span>}
       </form>

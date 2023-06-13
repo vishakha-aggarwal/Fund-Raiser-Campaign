@@ -457,13 +457,13 @@ button#finalize:hover{
 }
 
 button#createReq{
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px 20px;
     background-color: rgb(139, 163, 229);
     border: 1px solid grey;
     border-radius: 10px;
     font-size: 15px;
+    width: 150px;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {

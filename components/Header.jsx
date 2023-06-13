@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../logo.jpg";
+import logo from "../logo.png";
 import { Link } from "../routes";
 import { MdHome, MdAddToPhotos } from "react-icons/md";
 

@@ -8,13 +8,13 @@ function Header() {
   return (
     <div className="headerCont">
       <span className="logoImg">
-        <Image
+        {/* <Image
           src={logo}
           alt="logo"
           width="40px"
           height="40px"
           style={{ border: "1px solid grey", borderRadius: "50%" }}
-        />
+        /> */}
       </span>
       <div className="context"> FundQuest </div>
 
